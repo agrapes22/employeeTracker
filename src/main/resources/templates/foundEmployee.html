@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Tracker</title>
+</head>
+<body>
+
+<table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+            <th>Email Address</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employee}">
+            <td th:text="${employee.getfirstName()}"></td>
+            <td th:text="${employee.getlastName()}"></td>
+            <td th:text="${employee.gettitle()}"></td>
+            <td th:text="${employee.getemailAdd()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

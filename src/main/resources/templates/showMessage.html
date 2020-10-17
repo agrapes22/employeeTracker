@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show message</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Result</h1>
+<p th:text="'First Name: ' + ${employee.getfirstName()}"></p>
+<p th:text="'Last Name: ' + ${employee.getlastName()}"></p>
+<p th:text="'Full Name: ' + ${employee.getfirstName()} + ' ' + ${employee.getlastName()}"></p>
+<p th:text="'Occupation: ' + ${employee.gettitle()}"></p>
+<p th:text="'Email:  ' + ${employee.getemailAdd()}"></p>
+<a href="/addEmployee">Submit another message</a>
+<a href="/allEmp">Show all employees</a>
+<a href="/lookUp">Look up employee</a>
+
+</body>
+</html>

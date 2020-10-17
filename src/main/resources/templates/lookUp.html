@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Tracker</title>
+</head>
+<body>
+
+<div align="center">
+
+<h1>Look Up Employees</h1>
+
+<form action="#" th:action="@{/lookUp}" th:object="${employee}" method="get">
+ 	<p> <h5>Last Name</h5>
+ 	<input type="text" /></p>
+	<p><input type="submit"/></p>
+	
+<a href="/addEmployee">Add another Employee</a>
+
+<table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+            <th>Email Address</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employee}">
+            <td th:text="${employee.getfirstName()}"></td>
+            <td th:text="${employee.getlastName()}"></td>
+            <td th:text="${employee.gettitle()}"></td>
+            <td th:text="${employee.getemailAdd()}"></td>
+        </tr>
+        </tbody>
+
+</form>
+
+</div>
+
+</body>
+</html>
