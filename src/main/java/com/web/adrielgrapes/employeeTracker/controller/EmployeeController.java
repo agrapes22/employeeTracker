@@ -78,5 +78,11 @@ public class EmployeeController
     	model.addAttribute("employee", employeeRepository.findAll(Sort.by(Sort.Direction.ASC, "lastName")));
     	return "allEmp";
     }
+    
+    @PostMapping("/employee/edit/{fullName}(fullName=${employee.getfullName")
+    public String updateEmployee()
+    {
+    	return "update";
+    }
 }
 

@@ -14,7 +14,7 @@
  	<p> <h5>Last Name</h5>
  	<input type="text" name="lastName"/></p>
 	<p><input type="submit"/></p>
-	
+
 <a href="/addEmployee">Add another employee</a>
 <a href="/allEmp">Show all employees</a>
 
@@ -24,7 +24,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Title</th>
-            <th>Email Address</th>
+            <th>Email Address</th> 
             <th></th>
         </tr>
         </thead>
@@ -34,7 +34,7 @@
             <td th:text="${employee.getlastName()}"></td>
             <td th:text="${employee.gettitle()}"></td>
             <td th:text="${employee.getemailAdd()}"></td>
-            <td>
+			<td>
             <a href="@{/employee/edit/{fullName}(fullName=${employee.getfullName})}" 
             class="btn btn-success btn-sm" role="button">Update</a>
             </td>
