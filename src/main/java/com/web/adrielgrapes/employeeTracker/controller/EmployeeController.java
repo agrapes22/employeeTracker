@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -65,7 +66,7 @@ public class EmployeeController
     }
     
     @GetMapping("/lookUp")
-    public String sendLookUp(Model model, String lastName, Employee employee)
+    public String sendLookUp(Model model, String lastName) //do not change!!!!
     {	
     	model.addAttribute("employee", employeeRepository.findByLastName(lastName));
     	return "lookUp";
@@ -74,7 +75,7 @@ public class EmployeeController
     @GetMapping("/allEmp")
     public String getAll(Model model)
     {
-    	model.addAttribute("employee", employeeRepository.findAll());
+    	model.addAttribute("employee", employeeRepository.findAll(Sort.by(Sort.Direction.ASC, "lastName")));
     	return "allEmp";
     }
 }

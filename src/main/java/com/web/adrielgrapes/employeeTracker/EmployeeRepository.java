@@ -9,6 +9,7 @@ import com.web.adrielgrapes.employeeTracker.bean.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long>
 {
+	//public List<Employee> findByLastName(String lastName);
 	Employee findByLastName(String lastName);
 	Employee findByFirstName(String firstName);
 	Employee findByTitle(String title);
